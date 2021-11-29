@@ -3,7 +3,7 @@ import * as React from 'react'
 import Link from 'next/link'
 
 export interface PostListPageProps {
-	posts: any[]
+	posts: any[] //a
 }
 
 export default function PostListPage({ posts }: PostListPageProps) {
