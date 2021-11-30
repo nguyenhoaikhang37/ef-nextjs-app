@@ -1,24 +1,26 @@
 {
-  "name": "ef-nextjs-app",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "http-proxy": "^1.18.1",
-    "next": "12.0.4",
-    "react": "17.0.2",
-    "react-dom": "17.0.2"
-  },
-  "devDependencies": {
-    "@types/http-proxy": "^1.17.7",
-    "@types/node": "16.11.10",
-    "@types/react": "17.0.37",
-    "eslint": "7",
-    "eslint-config-next": "12.0.4",
-    "typescript": "4.5.2"
-  }
+	"name": "ef-nextjs-app",
+	"private": true,
+	"scripts": {
+		"dev": "next dev -p 8080",
+		"build": "next build",
+		"start": "next start",
+		"lint": "next lint"
+	},
+	"dependencies": {
+		"cookies": "^0.8.0",
+		"http-proxy": "^1.18.1",
+		"next": "12.0.4",
+		"react": "17.0.2",
+		"react-dom": "17.0.2"
+	},
+	"devDependencies": {
+		"@types/cookies": "^0.7.7",
+		"@types/http-proxy": "^1.17.7",
+		"@types/node": "16.11.10",
+		"@types/react": "17.0.37",
+		"eslint": "7",
+		"eslint-config-next": "12.0.4",
+		"typescript": "4.5.2"
+	}
 }
