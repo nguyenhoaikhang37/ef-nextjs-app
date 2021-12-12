@@ -26,18 +26,21 @@ export default function handler(req: NextApiRequest, res: NextApiResponse<Data>)
 
 		const handleLoginResponse: ProxyResCallback = (proxyRes, req, res) => {
 			let body = ''
+
+			// Từ trên Api trả dữ liệu về (dữ liệu này là accessToken và expiredAt)
 			proxyRes.on('data', function (chunk) {
 				body += chunk
 			})
 
+			// Lấy đầy đủ dữ liệu về rồi parse ra lấy accessToken và expiredAt
 			proxyRes.on('end', function () {
 				try {
 					const { accessToken, expiredAt } = JSON.parse(body)
-					console.log({ accessToken, expiredAt })
+
 					// convert token to cookies
 					const cookies = new Cookies(req, res, { secure: process.env.NODE_ENV !== 'development' })
 					cookies.set('access_token', accessToken, {
-						httpOnly: true,
+						httpOnly: true, // để khi hacker gõ document.cookie sẽ ko lấy đc accessToken
 						sameSite: 'lax',
 						expires: new Date(expiredAt),
 					})

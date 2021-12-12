@@ -17,9 +17,12 @@
 		"baseUrl": ".",
 		"paths": {
 			"@/components/*": ["./components/*"],
-			"@/models": ["./models"]
+			"@/models": ["./models"],
+			"@/hooks": ["./hooks"],
+			"@/utils": ["./utils"],
+			"@/api-client": ["./api-client"]
 		}
 	},
-	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "components/common/header/index.tss"],
 	"exclude": ["node_modules"]
 }
